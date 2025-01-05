@@ -1,0 +1,66 @@
+<div class="student-register">
+  <h2>Student Registration</h2>
+
+  <form (ngSubmit)="onSubmit()">
+    <!-- Full Name -->
+    <label for="fullName">Full Name</label>
+    <input type="text" id="fullName" [(ngModel)]="student.fullName" name="fullName" required />
+
+    <!-- Name with Initials -->
+    <label for="nameWithInitials">Name with Initials</label>
+    <input type="text" id="nameWithInitials" [(ngModel)]="student.nameWithInitials" name="nameWithInitials" required />
+
+    <!-- NIC -->
+    <label for="nic">NIC</label>
+    <input type="text" id="nic" [(ngModel)]="student.nic" name="nic" required />
+
+    <!-- MIS Number -->
+    <label for="misNumber">MIS Number</label>
+    <input type="text" id="misNumber" [(ngModel)]="student.misNumber" name="misNumber" required />
+
+    <!-- Mobile -->
+    <label for="mobile">Mobile</label>
+    <input type="text" id="mobile" [(ngModel)]="student.mobile" name="mobile" required />
+
+    <!-- Address -->
+    <label for="address">Address</label>
+    <input type="text" id="address" [(ngModel)]="student.address" name="address" required />
+
+    <!-- Gender -->
+    <label for="gender">Gender</label>
+    <select id="gender" [(ngModel)]="student.gender" name="gender" required>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+
+    <!-- Course Dropdown -->
+    <label for="courseId">Course</label>
+    <select id="courseId" [(ngModel)]="student.courseId" name="courseId" required>
+      <option *ngFor="let courses of course" [value]="courses.CD_ID">
+        {{ courses.CourseName }}
+      </option>
+    </select>
+
+    <!-- Course Year -->
+    <label for="courseYear">Course Year</label>
+    <input type="number" id="courseYear" [(ngModel)]="student.courseYear" name="courseYear" required />
+
+    <!-- Dropout -->
+    <label for="dropout">Dropout</label>
+    <input type="checkbox" id="dropout" [(ngModel)]="student.dropout" name="dropout" />
+
+    <!-- Final Exam Sitted -->
+    <label for="finalExamSitted">Final Exam Sitted</label>
+    <input type="checkbox" id="finalExamSitted" [(ngModel)]="student.finalExamSitted" name="finalExamSitted" />
+
+    <!-- Repeat Student -->
+    <label for="repeatStudent">Repeat Student</label>
+    <input type="checkbox" id="repeatStudent" [(ngModel)]="student.repeatStudent" name="repeatStudent" />
+
+    <!-- User -->
+    <label for="user">User</label>
+    <input type="number" id="user" [(ngModel)]="student.user" name="user" required />
+
+    <button type="submit">Register</button>
+  </form>
+</div>

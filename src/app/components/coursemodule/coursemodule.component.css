@@ -1,0 +1,52 @@
+.course-module {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .course-module h2 {
+    text-align: center;
+    color: #4CAF50;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .course-module label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .course-module input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .course-module button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  .course-module button:hover {
+    background-color: #45a049;
+  }
+  
+  .course-module input[type="checkbox"] {
+    width: auto;
+  }
+  
+  .course-module input[type="number"] {
+    width: auto;
+  }
+  

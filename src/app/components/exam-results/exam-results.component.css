@@ -1,0 +1,53 @@
+.exam-results {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .exam-results h2 {
+    text-align: center;
+    color: #4CAF50;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .exam-results label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .exam-results select,
+  .exam-results input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .exam-results button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  .exam-results button:hover {
+    background-color: #45a049;
+  }
+  
+  .exam-results input[type="number"] {
+    width: auto;
+  }
+  
+  .exam-results select {
+    width: auto;
+  }
+  

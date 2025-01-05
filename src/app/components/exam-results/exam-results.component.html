@@ -1,0 +1,31 @@
+<div class="exam-results">
+    <h2>Exam Results</h2>
+  
+    <!-- Form for submitting exam results -->
+    <form (ngSubmit)="onSubmit()">
+      
+      <!-- Course Year Dropdown -->
+      <label for="courseYear">Course Year</label>
+      <select id="courseYear" [(ngModel)]="examResults.courseYear" name="courseYear" required>
+        <option *ngFor="let year of courseYears" [value]="year">{{ year }}</option>
+      </select>
+  
+      <!-- Module Code Dropdown -->
+      <label for="moduleCode">Module Code</label>
+      <select id="moduleCode" [(ngModel)]="examResults.moduleCode" name="moduleCode" required>
+        <option *ngFor="let module of moduleCodes" [value]="module">{{ module }}</option>
+      </select>
+  
+      <!-- Marks Input -->
+      <label for="marks">Marks</label>
+      <input type="number" id="marks" [(ngModel)]="examResults.marks" name="marks" required />
+  
+      <!-- User Input -->
+      <label for="user">User</label>
+      <input type="number" id="user" [(ngModel)]="examResults.user" name="user" required />
+  
+      <!-- Submit Button -->
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  

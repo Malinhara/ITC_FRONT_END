@@ -1,0 +1,27 @@
+<div class="course-module">
+    <h2>Course Module</h2>
+  
+    <!-- Form for creating/editing a Course Module -->
+    <form (ngSubmit)="onSubmit()">
+      
+      <!-- Module Name -->
+      <label for="moduleName">Module Name</label>
+      <input type="text" id="moduleName" [(ngModel)]="module.moduleName" name="moduleName" required />
+  
+      <!-- Module Code -->
+      <label for="moduleCode">Module Code</label>
+      <input type="text" id="moduleCode" [(ngModel)]="module.moduleCode" name="moduleCode" required />
+  
+      <!-- Active (Checkbox) -->
+      <label for="active">Active</label>
+      <input type="checkbox" id="active" [(ngModel)]="module.active" name="active" />
+  
+      <!-- User -->
+      <label for="user">User</label>
+      <input type="number" id="user" [(ngModel)]="module.user" name="user" required />
+  
+      <!-- Submit Button -->
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  
