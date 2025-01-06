@@ -6,23 +6,30 @@
       
       <!-- Course Year Dropdown -->
       <label for="courseYear">Course Year</label>
-      <select id="courseYear" [(ngModel)]="examResults.courseYear" name="courseYear" required>
+      <select id="courseYear" [(ngModel)]="results.courseYear" name="courseYear" required>
         <option *ngFor="let year of courseYears" [value]="year">{{ year }}</option>
       </select>
   
       <!-- Module Code Dropdown -->
       <label for="moduleCode">Module Code</label>
-      <select id="moduleCode" [(ngModel)]="examResults.moduleCode" name="moduleCode" required>
-        <option *ngFor="let module of moduleCodes" [value]="module">{{ module }}</option>
+      <select id="moduleCode" [(ngModel)]="results.moduleCode" name="moduleCode" required>
+        <option *ngFor="let module of courseModules" [value]="module.ModuleId">{{ module.ModuleName}} - {{ module.ModuleId}}</option>
       </select>
   
       <!-- Marks Input -->
       <label for="marks">Marks</label>
-      <input type="number" id="marks" [(ngModel)]="examResults.marks" name="marks" required />
+      <input type="number" id="marks" [(ngModel)]="results.marks" name="marks" required />
   
       <!-- User Input -->
-      <label for="user">User</label>
-      <input type="number" id="user" [(ngModel)]="examResults.user" name="user" required />
+      <!-- <label for="user">User</label>
+      <input type="number" id="user" [(ngModel)]="results.user" name="user" required /> -->
+  
+      <!-- Top Student Dropdown (ID - Name) -->
+      <label for=" StudentId">Student</label>
+      <select id="StudentId" [(ngModel)]="results.StudentId" (change)="onStudentSelect()" name="StudentId"  required >
+        <option value="" disabled selected>Select Student</option>
+        <option *ngFor="let student of students" [value]="student.Id">{{ student.FullName}} - {{ student.Id}}</option>
+      </select>
   
       <!-- Submit Button -->
       <button type="submit">Submit</button>

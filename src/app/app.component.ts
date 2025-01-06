@@ -14,7 +14,6 @@ import { StudentRegisterComponent } from './components/student-register/student-
     CourseDetailsComponent, 
     CoursemoduleComponent, 
     ExamResultsComponent, 
-    StudentRegisterComponent, 
     RouterModule  
   ],
   templateUrl: './app.component.html',

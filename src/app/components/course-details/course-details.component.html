@@ -1,47 +1,93 @@
 <div class="course-details">
     <h2>Course Details</h2>
-    
-    <form (ngSubmit)="onSubmit()">
-      
+  
+    <form (ngSubmit)="onSubmit()" #courseForm="ngForm">
       <!-- Course Name Input -->
       <label for="courseName">Course Name</label>
-      <input type="text" id="courseName" [(ngModel)]="course.courseName" name="courseName" required />
+      <input
+        type="text"
+        id="courseName"
+        [(ngModel)]="course.courseName"
+        name="courseName"
+        required
+      />
   
       <!-- Course Type Dropdown -->
       <label for="courseType">Course Type</label>
-      <select id="courseType" [(ngModel)]="course.courseType" name="courseType" required>
-        <option *ngFor="let type of courseTypes" [value]="type">{{ type }}</option>
+      <select
+        id="courseType"
+        [(ngModel)]="course.courseType"
+        name="courseType"
+        required
+      >
+        <option value="" disabled selected>Select Course Type</option>
+        <option *ngFor="let type of courseTypes" [value]="type">
+          {{ type }}
+        </option>
       </select>
   
       <!-- Course Level Dropdown -->
       <label for="courseLevel">Course Level</label>
-      <select id="courseLevel" [(ngModel)]="course.courseLevel" name="courseLevel" required>
-        <option *ngFor="let level of courseLevels" [value]="level">{{ level }}</option>
+      <select
+        id="courseLevel"
+        [(ngModel)]="course.courseLevel"
+        name="courseLevel"
+        required
+      >
+        <option value="" disabled selected>Select Course Level</option>
+        <option *ngFor="let level of courseLevels" [value]="level">
+          {{ level }}
+        </option>
       </select>
   
       <!-- Duration Input -->
       <label for="duration">Duration</label>
-      <input type="text" id="duration" [(ngModel)]="course.duration" name="duration" required />
+      <input
+        type="text"
+        id="duration"
+        [(ngModel)]="course.duration"
+        name="duration"
+        required
+      />
   
-      <!-- Medium Input -->
+      <!-- Medium Dropdown -->
       <label for="medium">Medium</label>
-      <input type="text" id="medium" [(ngModel)]="course.medium" name="medium" required />
+      <select
+        id="medium"
+        [(ngModel)]="course.medium"
+        name="medium"
+        required
+      >
+        <option value="" disabled selected>Select Medium</option>
+        <option *ngFor="let medium of mediums" [value]="medium">
+          {{ medium }}
+        </option>
+      </select>
   
       <!-- Module Code Dropdown -->
       <label for="moduleCode">Module Code</label>
-      <select id="moduleCode" [(ngModel)]="course.moduleCode" name="moduleCode" required>
-        <option *ngFor="let code of moduleCodes" [value]="code">{{ code }}</option>
+      <select
+        id="moduleCode"
+        [(ngModel)]="course.moduleCode"
+        name="moduleCode"
+        required
+      >
+        <option value="" selected>Select Module Code</option>
+        <option *ngFor="let code of courseModules" [value]="code.ModuleId">
+          {{ code.ModuleName }}
+        </option>
       </select>
-  
-      <!-- Active Status (Checkbox) -->
+
+
       <label for="active">Active</label>
-      <input type="checkbox" id="active" [(ngModel)]="course.active" name="active" />
-  
-      <!-- User Input -->
-      <label for="user">User</label>
-      <input type="number" id="user" [(ngModel)]="course.user" name="user" required />
-  
-      <button type="submit">Submit</button>
+     <select id="active" [(ngModel)]="course.active" name="active" required>
+      <option value=1>yes</option>
+       <option value=0>No</option>
+    </select>
+ 
+
+
+    <button type="submit">Create</button>
     </form>
-  </div>
+
   

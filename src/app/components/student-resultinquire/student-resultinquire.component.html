@@ -1,51 +1,45 @@
 <div class="result-inquiry">
-    <h2>Student Result Inquiry</h2>
-  
-    <!-- Form for student result inquiry -->
-    <form (ngSubmit)="onSearch()">
-      
-      <!-- Course Year Dropdown -->
-      <label for="courseYear">Course Year</label>
-      <select id="courseYear" [(ngModel)]="inquiryData.courseYear" name="courseYear" required>
-        <option *ngFor="let year of courseYears" [value]="year">{{ year }}</option>
-      </select>
-  
-      <!-- Module Code Dropdown -->
-      <label for="moduleCode">Module Code</label>
-      <select id="moduleCode" [(ngModel)]="inquiryData.moduleCode" name="moduleCode" required>
-        <option *ngFor="let module of moduleCodes" [value]="module">{{ module }}</option>
-      </select>
-  
-      <!-- Submit Button to search results -->
-      <button type="submit">Search Results</button>
-    </form>
-  
-    <!-- Display Results -->
-    <div *ngIf="searchResults.length > 0" class="result-list">
-      <h3>Results:</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Course Year</th>
-            <th>Module Code</th>
-            <th>Marks</th>
-            <th>Date Entered</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let result of searchResults">
-            <td>{{ result.courseYear }}</td>
-            <td>{{ result.moduleCode }}</td>
-            <td>{{ result.marks }}</td>
-            <td>{{ result.dateEntered  }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  
-    <!-- Button for downloading the report -->
-    <div *ngIf="searchResults.length > 0" class="download-btn">
-      <button (click)="downloadReport()">Download Report</button>
-    </div>
+  <h2>Student Result Inquiry</h2>
+
+  <!-- Form for student result inquiry -->
+  <form (ngSubmit)="onSearch()">
+    <label for="studentId">Student Id</label>
+    <select [(ngModel)]="studentId.studentId" name="studentId" required>
+      <option value="" disabled selected>Select Student</option>
+      <option *ngFor="let student of students" [value]="student.Id">
+        {{ student.FullName }} - {{ student.Id }}
+      </option>
+    </select>
+
+    <!-- Submit Button to search results -->
+    <button type="submit">Search Results</button>
+  </form>
+
+  <!-- Display Results -->
+  <div *ngIf="results.length > 0" class="result-list">
+    <h3>Results:</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Student ID - Name</th>
+          <th>Course Year</th>
+          <th>Module Code</th>
+          <th>Marks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let result of results">
+          <td>{{ result.id }} - {{ result.FullName }}</td>
+          <td>{{ result.CourseYear }}</td>
+          <td>{{ result.ModuleName }}</td>
+          <td>{{ result.Marks}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  
+
+
+  <div *ngIf="results.length > 0" class="download-btn">
+    <button (click)="downloadReport()">Download CSV</button>
+  </div>
+</div>

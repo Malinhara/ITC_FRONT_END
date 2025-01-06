@@ -1,6 +1,8 @@
 <div class="student-register">
   <h2>Student Registration</h2>
 
+
+
   <form (ngSubmit)="onSubmit()">
     <!-- Full Name -->
     <label for="fullName">Full Name</label>
@@ -36,9 +38,8 @@
     <!-- Course Dropdown -->
     <label for="courseId">Course</label>
     <select id="courseId" [(ngModel)]="student.courseId" name="courseId" required>
-      <option *ngFor="let courses of course" [value]="courses.CD_ID">
-        {{ courses.CourseName }}
-      </option>
+      <option value="" selected>Select a Course</option>
+      <option *ngFor="let course of courses" [value]="course.CD_ID">{{ course.CourseName }}</option>
     </select>
 
     <!-- Course Year -->
@@ -58,9 +59,7 @@
     <input type="checkbox" id="repeatStudent" [(ngModel)]="student.repeatStudent" name="repeatStudent" />
 
     <!-- User -->
-    <label for="user">User</label>
-    <input type="number" id="user" [(ngModel)]="student.user" name="user" required />
-
+   
     <button type="submit">Register</button>
   </form>
 </div>
