@@ -88,13 +88,25 @@ export class CourseDetailsComponent implements OnInit {
   }
 
   validateForm(): boolean {
-    const { courseName, courseType, courseLevel, duration, medium, moduleCode, user } = this.course;
-
-    if (!courseName || !courseType || !courseLevel || !duration || !medium || !moduleCode || !user) {
+    const { courseName, courseType, courseLevel, duration, medium, moduleCode, user, active } = this.course;
+  
+    // Check for required fields
+    if (!courseName || !courseType || !courseLevel || !duration || !medium || !moduleCode || !user || active === null || active === undefined) {
       return false;
     }
-
+  
    
+    if (isNaN(Number(duration)) || Number(duration) <= 0) {
+      alert('Please enter a valid duration.');
+      return false;
+    }
+  
+
+    if (active !== 0 && active !== 1) {
+      alert('Please select a valid status for the course (0 for inactive, 1 for active).');
+      return false;
+    }
+  
     return true;
   }
 
