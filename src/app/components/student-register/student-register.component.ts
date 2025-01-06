@@ -18,8 +18,8 @@ type StudentType = {
   mobile: string;
   address: string;
   gender: string;
-  courseId: number; // Fixed: courseId should be of type number
-  courseYear: number; // Fixed: courseYear should be of type number
+  courseId: number; 
+  courseYear: number; 
   dropout: number;
   finalExamSitted: number;
   repeatStudent: number;
@@ -47,7 +47,7 @@ export class StudentRegisterComponent implements OnInit {
     address: '',
     gender: '',
     courseId: 0, // Initialized with a default number
-    courseYear: 0, // Initialized with a default number
+    courseYear: 0, 
     dropout: 0,
     finalExamSitted: 0,
     repeatStudent: 0,
